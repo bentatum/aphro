@@ -69,7 +69,7 @@ export const Button = {
 }
 ```
 
-### 3. Wrap your application with your theme.
+### 3. Wrap your application
 
 ```js
 import Theme from './Theme'
