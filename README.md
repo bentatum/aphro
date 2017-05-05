@@ -1,4 +1,4 @@
-# aphro
+# Aphro
 
 An unopinionated set of user interface elements for React
 
@@ -20,18 +20,26 @@ yarn install aphro
 ```
 
 ## Setup
-Aphro makes use of React's context for configuration, so you'll need to add a parent component to your application. Here's an example of a basic configuration.
+Aphro makes use of React's context for configuration. Here's an example of a basic configuration.
 
-Your configuration will ultimately be defined in a React Component that you create to wrap your entire application. We'll call it Theme for our example.
+### 1. Create a root component and plug in your theme.
 
 ```js
 // Theme.js
 import config from './config'
+import PropTypes from 'prop-types'
 import { classNames } from 'aphro'
 
 const Theme = props => props.children
 
 Theme.contextTypes = {
+  aphro: PropTypes.shape({
+    config: PropTypes.object,
+    classNames: PropTypes.object
+  })
+}
+
+Theme.childContextTypes = {
   aphro: { 
     config,
     classNames: classNames(config)
@@ -41,7 +49,7 @@ Theme.contextTypes = {
 export default Theme
 ```
 
-I recommend putting your configuration into a separate document and importing it.
+### 2. Create a config document.
 
 ```js
 // config.js
@@ -61,9 +69,10 @@ export const Button = {
 }
 ```
 
+### 3. Wrap your application with your theme.
+
 ```js
-// index.js
-import Theme from 'Theme'
+import Theme from './Theme'
 import { render } from 'react-dom'
 
 render(
@@ -74,7 +83,7 @@ render(
 )
 ```
 
-Here's how we use the utilitiy classNames that are generated based on your theme configuration.
+### withClassNames
 
 ```js
 // Application.js
