@@ -72,7 +72,7 @@ render(
 
 ```js
 // Application.js
-import { withClassNames } from 'aphro'
+import { Panel, withClassNames } from 'aphro'
 import { css } from 'aphrodite/no-important'
 
 const enhance = withClassNames
@@ -80,7 +80,9 @@ const enhance = withClassNames
 export default enhance(({ classNames: cx }) =>
   <div className={css(cx.flex)}>
     <div className={css(cx.col8)}>
-      Sidebar
+      <Panel border>
+        Sidebar
+      </Panel>
     </div>
     <div className={css(cx.col4)}>
       Content
