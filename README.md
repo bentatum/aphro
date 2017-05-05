@@ -22,6 +22,27 @@ yarn install aphro
 ## Setup
 Aphro makes use of React's context for configuration, so you'll need to add a parent component to your application. Here's an example of a basic configuration.
 
+Your configuration will ultimately be defined in a React Component that you create to wrap your entire application. We'll call it Theme for our example.
+
+```js
+// Theme.js
+import config from './config'
+import { classNames } from 'aphro'
+
+const Theme = props => props.children
+
+Theme.contextTypes = {
+  aphro: { 
+    config,
+    classNames: classNames(config)
+  }
+}
+
+export default Theme
+```
+
+I recommend putting your configuration into a separate document and importing it.
+
 ```js
 // config.js
 export const Button = {
@@ -41,23 +62,6 @@ export const Button = {
 ```
 
 ```js
-// Theme.js
-import config from './config'
-import { classNames } from 'aphro'
-
-const Theme = props => props.children
-
-Theme.contextTypes = {
-  aphro: {
-    config,
-    classNames: classNames(config)
-  }
-}
-
-export default Theme
-```
-
-```js
 // index.js
 import Theme from 'Theme'
 import { render } from 'react-dom'
@@ -70,9 +74,11 @@ render(
 )
 ```
 
+Here's how we use the utilitiy classNames that are generated based on your theme configuration.
+
 ```js
 // Application.js
-import { Panel, withClassNames } from 'aphro'
+import { withClassNames } from 'aphro'
 import { css } from 'aphrodite/no-important'
 
 const enhance = withClassNames
@@ -80,21 +86,13 @@ const enhance = withClassNames
 export default enhance(({ classNames: cx }) =>
   <div className={css(cx.flex)}>
     <div className={css(cx.col8)}>
-      <Panel border>
         Sidebar
-      </Panel>
     </div>
     <div className={css(cx.col4)}>
       Content
     </div>
   </div>
 )
-```
-
-## Usage
-
-```js
-import { Button } from 'aphro'
 ```
 
 ## Contributing
