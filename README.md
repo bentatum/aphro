@@ -16,13 +16,56 @@ An unopinionated set of user interface elements for React
 ## Install
 
 ```
-npm install aphro
+yarn install aphro
+```
+
+## Setup
+Aphro makes use of React's context for configuration, so you'll need to add a parent component to your application. Here's an example of a basic configuration.
+
+```js
+// Theme/index.js
+export default from './Theme'
+```
+
+```js
+// Theme/config.js
+export const Button = {
+  extraSmall: {
+    height: 10
+  },
+  small: {
+    height: 20
+  },
+  medium: {
+    height: 30
+  },
+  large: {
+    height: 40
+  }
+}
+```
+
+```js
+// Theme/Theme.js
+import config from './config'
+import { classNames } from 'aphro'
+
+const Theme = props => props.children
+
+Theme.contextTypes = {
+  aphro: {
+    config,
+    classNames: classNames(config)
+  }
+}
+
+export default Theme
 ```
 
 ## Usage
 
 ```js
-var aphro = require('aphro')
+import { Button } from 'aphro'
 ```
 
 ## Contributing
