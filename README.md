@@ -70,7 +70,7 @@ render(
 )
 ```
 
-```
+```js
 // Application.js
 import { withClassNames } from 'aphro'
 import { css } from 'aphrodite/no-important'
