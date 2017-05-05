@@ -23,12 +23,7 @@ yarn install aphro
 Aphro makes use of React's context for configuration, so you'll need to add a parent component to your application. Here's an example of a basic configuration.
 
 ```js
-// Theme/index.js
-export default from './Theme'
-```
-
-```js
-// Theme/config.js
+// config.js
 export const Button = {
   extraSmall: {
     height: 10
@@ -46,7 +41,7 @@ export const Button = {
 ```
 
 ```js
-// Theme/Theme.js
+// Theme.js
 import config from './config'
 import { classNames } from 'aphro'
 
@@ -60,6 +55,38 @@ Theme.contextTypes = {
 }
 
 export default Theme
+```
+
+```js
+// index.js
+import Theme from 'Theme'
+import { render } from 'react-dom'
+
+render(
+  <Theme>
+    <Application />
+  </Theme>
+  document.getElementById('root')
+)
+```
+
+```
+// Application.js
+import { withClassNames } from 'aphro'
+import { css } from 'aphrodite/no-important'
+
+const enhance = withClassNames
+
+export default enhance(({ classNames: cx }) =>
+  <div className={css(cx.flex)}>
+    <div className={css(cx.col8)}>
+      Sidebar
+    </div>
+    <div className={css(cx.col4)}>
+      Content
+    </div>
+  </div>
+)
 ```
 
 ## Usage
