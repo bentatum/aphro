@@ -22,7 +22,7 @@ yarn install aphro
 ## Setup
 Aphro makes use of React's context for configuration. Here's an example of a basic configuration.
 
-### 1. Create a root component and plug in your theme.
+### 1. Create a root component
 
 ```js
 // Theme.js
@@ -49,7 +49,7 @@ Theme.childContextTypes = {
 export default Theme
 ```
 
-### 2. Create a config document.
+### 2. Create a theme
 
 ```js
 // config.js
