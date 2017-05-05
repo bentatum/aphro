@@ -1,6 +1,6 @@
 {
   "name": "aphro",
-  "description": "An unopinionated set of user interface elements for React",
+  "description": "A small unopinionated base of user interface elements for React built on top of aphrodite",
   "version": "0.0.1",
   "author": "bentatum <bentatum@me.com>",
   "bugs": {
@@ -42,6 +42,7 @@
     "prop-types": "^15.5.8",
     "react": "^15.5.4",
     "react-icons": "^2.2.3",
+    "react-test-renderer": "^15.5.4",
     "recompose": "^0.23.1",
     "shortid": "^2.2.8"
   },
