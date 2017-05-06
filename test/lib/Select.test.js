@@ -1,19 +1,14 @@
 
 import React from 'react'
-import Select from '../Select'
+import Select from '../../lib/Select'
 // import { TestProvider } from 'helpers'
 import renderer from 'react-test-renderer'
 import { StyleSheetTestUtils } from 'aphrodite'
 
-beforeAll(() => {
-  StyleSheetTestUtils.suppressStyleInjection();
-})
+beforeAll(StyleSheetTestUtils.suppressStyleInjection)
+afterAll(StyleSheetTestUtils.clearBufferAndResumeStyleInjection)
 
-afterAll(() => {
-  StyleSheetTestUtils.clearBufferAndResumeStyleInjection();
-})
-
-describe('Button', () => {
+describe('Select', () => {
   test('render', () => {
     const component = renderer.create(
       <Select />

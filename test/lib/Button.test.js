@@ -1,17 +1,11 @@
 
 import React from 'react'
-import Button from '../Button'
-// import { TestProvider } from 'helpers'
+import Button from '../../lib/Button'
 import renderer from 'react-test-renderer'
 import { StyleSheetTestUtils } from 'aphrodite'
 
-beforeAll(() => {
-  StyleSheetTestUtils.suppressStyleInjection();
-})
-
-afterAll(() => {
-  StyleSheetTestUtils.clearBufferAndResumeStyleInjection();
-})
+beforeAll(StyleSheetTestUtils.suppressStyleInjection)
+afterAll(StyleSheetTestUtils.clearBufferAndResumeStyleInjection)
 
 describe('Button', () => {
   test('render', () => {

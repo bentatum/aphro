@@ -1,5 +1,5 @@
 
-import hasBorder from '../hasBorder'
+import hasBorder from '../../../lib/helpers/hasBorder'
 
 describe('helpers/hasBorder', () => {
   test('all outcomes', () => {

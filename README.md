@@ -26,7 +26,7 @@ Aphro makes use of React's context for configuration. Here's an example of a bas
 
 ```js
 // Theme.js
-import config from './config'
+import * as config from './config'
 import PropTypes from 'prop-types'
 import { classNames } from 'aphro'
 

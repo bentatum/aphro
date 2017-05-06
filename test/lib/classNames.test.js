@@ -1,6 +1,6 @@
 
-import classNames from '../classNames'
-import { breakpoints } from '../../config'
+import classNames from '../../lib/classNames'
+import { breakpoints } from '../../lib/config'
 
 describe('classNames', () => {
   test('outcome', () => {

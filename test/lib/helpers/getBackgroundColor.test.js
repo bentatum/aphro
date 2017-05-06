@@ -1,6 +1,6 @@
 
-import { colors } from '../../config'
-import getBackgroundColor from '../getBackgroundColor'
+import { colors } from '../../../lib/config'
+import getBackgroundColor from '../../../lib/helpers/getBackgroundColor'
 
 describe('helpers/getBackgroundColor', () => {
   test('available color', () => {
