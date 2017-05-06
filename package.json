@@ -33,7 +33,7 @@
     "test": "jest lib --env=jsdom",
     "prebuild": "rm -rf dist",
     "build": "yarn test && babel -d dist/ lib/",
-    "prepublish": "yarn test && yarn build"
+    "prepublish": "yarn build"
   },
   "dependencies": {
     "shortid": "^2.2.8",
