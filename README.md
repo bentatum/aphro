@@ -16,7 +16,7 @@ An unopinionated set of user interface elements for React
 ## Install
 
 ```
-yarn install aphro
+yarn add aphro
 ```
 
 ## Setup
