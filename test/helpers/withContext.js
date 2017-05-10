@@ -1,8 +1,10 @@
 
+import PropTypes from 'prop-types'
 import { withContext } from 'recompose'
-import classNames from '../lib/classNames'
+import classNames from '../../lib/classNames'
+import * as defaultConfig from '../../lib/config'
 
-export default Component => props => {
+export default props => Component => {
   const enhanced = withContext(
     {
       aphro: PropTypes.shape({
@@ -10,12 +12,15 @@ export default Component => props => {
         classNames: PropTypes.object
       })
     },
-    () => ({
-      aphro: {
-        config: props,
-        classNames: classNames(props)
+    () => {
+      const config = { ...defaultConfig, ...props }
+      return {
+        aphro: {
+          config,
+          classNames: classNames(config)
+        }
       }
-    })
+    }
   )
 
   return enhanced(Component)

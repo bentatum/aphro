@@ -104,6 +104,19 @@ export default enhance(({ classNames: cx }) =>
 )
 ```
 
+### aphro classNames
+container
+flex
+flexWrap
+alignFlexStart
+alignCenter
+alignFlexEnd
+justifyFlexStart
+justifyCenter
+justifyFlexEnd
+col{1-12}{xs|sm|md|lg|xl}
+
+
 ## Contributing
 
 Contributions welcome! Please read the [contributing guidelines](CONTRIBUTING.md) first.
