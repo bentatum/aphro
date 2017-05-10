@@ -1,7 +1,7 @@
 {
   "name": "aphro",
   "description": "A small unopinionated base of user interface elements for React built on top of aphrodite",
-  "version": "0.0.9",
+  "version": "0.0.10",
   "author": "bentatum <bentatum@me.com>",
   "bugs": {
     "url": "https://github.com/bentatum/aphro/issues"
