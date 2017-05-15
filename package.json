@@ -1,7 +1,7 @@
 {
   "name": "aphro",
   "description": "A small unopinionated base of user interface elements for React built on top of aphrodite",
-  "version": "0.0.12",
+  "version": "0.0.13",
   "author": "bentatum <bentatum@me.com>",
   "bugs": {
     "url": "https://github.com/bentatum/aphro/issues"
@@ -31,7 +31,7 @@
     "url": "https://github.com/bentatum/aphro.git"
   },
   "scripts": {
-    "test": "jest ./test --env=jsdom",
+    "test": "jest ./lib/__tests__/lib/ --env=jsdom",
     "prebuild": "rm -rf dist",
     "build": "yarn test && babel -d dist/ lib/",
     "prepublish": "yarn build"
